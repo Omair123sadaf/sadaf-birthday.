@@ -2,334 +2,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff0f5">
-  <title>Happy Birthday Sadaf ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>Happy Birthday Sadaf ❤️</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #71344e;
-      text-align: center;
-      background: linear-gradient(145deg, #fff9fc, #ffe0eb, #fff2f6);
-      overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #71344e;
+  text-align: center;
+  background: linear-gradient(145deg,#fff9fc,#ffe0eb,#fff2f6);
+  overflow-x: hidden;
+}
 
-    .hero {
-      min-height: 100vh;
-      padding: 70px 20px 45px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+.hero {
+  min-height: 100vh;
+  padding: 70px 20px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    .eyebrow {
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: bold;
-      line-height: 1.8;
-      color: #a14f70;
-    }
+.eyebrow {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.8;
+  color: #a14f70;
+}
 
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(45px, 12vw, 76px);
-      line-height: 1.04;
-      margin: 25px 0;
-      color: #84234f;
-    }
+h1 {
+  font-family: Georgia,serif;
+  font-size: clamp(45px,12vw,76px);
+  line-height: 1.04;
+  margin: 25px 0;
+  color: #84234f;
+}
 
-    h1 span {
-      display: block;
-      font-style: italic;
-      color: #ed6598;
-    }
+h1 span {
+  display: block;
+  font-style: italic;
+  color: #ed6598;
+}
 
-    .intro {
-      font-size: 19px;
-      line-height: 1.8;
-      max-width: 470px;
-      margin: 10px auto 28px;
-    }
+.intro {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 470px;
+  margin: 10px auto 28px;
+}
 
-    button {
-      border: none;
-      border-radius: 40px;
-      padding: 17px 27px;
-      background: #90234f;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 10px 25px #90234f26;
-      transition: transform .2s, background .2s;
-    }
+button {
+  border: none;
+  border-radius: 40px;
+  padding: 17px 27px;
+  background: #90234f;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px #90234f26;
+  transition: transform .2s,background .2s;
+}
 
-    button:active { transform: scale(.96); }
+button:active { transform: scale(.96); }
+button:hover { background: #72163d; }
 
-    button:hover { background: #72163d; }
+button:disabled {
+  opacity: .8;
+  cursor: default;
+}
 
-    .signature {
-      margin-top: 35px;
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: #a16c80;
-    }
+.signature {
+  margin-top: 35px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #a16c80;
+}
 
-    .hidden { display: none !important; }
+.hidden { display: none !important; }
 
-    section {
-      padding: 55px 18px;
-      max-width: 850px;
-      margin: auto;
-    }
+section {
+  padding: 55px 18px;
+  max-width: 850px;
+  margin: auto;
+}
 
-    h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(30px, 8vw, 44px);
-      color: #90234f;
-      margin: 0 0 16px;
-    }
+h2 {
+  font-family: Georgia,serif;
+  font-size: clamp(30px,8vw,44px);
+  color: #90234f;
+  margin: 0 0 16px;
+}
 
-    .subtitle {
-      line-height: 1.7;
-      margin: 0 auto 28px;
-      max-width: 520px;
-    }
+.subtitle {
+  line-height: 1.7;
+  margin: 0 auto 28px;
+  max-width: 520px;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-      max-width: 500px;
-      margin: 30px auto;
-    }
+/* ANIMATIONS */
 
-    .photo-card {
-      background: #ffffffc9;
-      padding: 12px;
-      border: 1px solid #f5c6d8;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px #8c315116;
-      transform: rotate(-1deg);
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .photo-card:nth-child(2) { transform: rotate(1deg); }
-    .photo-card:nth-child(3) { transform: rotate(-.5deg); }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
-    .photo-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 520px;
-      object-fit: contain;
-      border-radius: 12px;
-      background: #fff0f5;
-    }
+@keyframes glow {
+  0%,100% {
+    box-shadow: 0 8px 25px #90234f15;
+  }
+  50% {
+    box-shadow: 0 10px 35px #ed659850;
+  }
+}
 
-    .caption {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 18px;
-      padding: 15px 5px 7px;
-    }
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: .9;
+  }
+  to {
+    transform: translateY(-110vh) rotate(45deg);
+    opacity: 0;
+  }
+}
 
-    .letter {
-      max-width: 620px;
-      margin: 25px auto;
-      padding: 28px 22px;
-      background: #ffffffb8;
-      border: 1px solid #f5cada;
-      border-radius: 22px;
-      box-shadow: 0 10px 30px #90234f10;
-      text-align: left;
-      line-height: 1.9;
-      font-size: 16px;
-    }
+.hero > * {
+  animation: fadeUp .9s ease both;
+}
 
-    .letter p { margin: 0 0 18px; }
-    .letter p:last-child { margin-bottom: 0; }
+.hero > *:nth-child(2) { animation-delay: .15s; }
+.hero > *:nth-child(3) { animation-delay: .3s; }
+.hero > *:nth-child(4) { animation-delay: .45s; }
 
-    .end {
-      padding: 40px 20px 65px;
-      font-family: Georgia, serif;
-      font-size: 24px;
-      color: #a72c60;
-    }
+#surpriseContent:not(.hidden) section {
+  animation: fadeUp 1s ease both;
+}
 
-    .heart {
-      position: fixed;
-      bottom: -35px;
-      pointer-events: none;
-      animation: floatUp 7s linear forwards;
-      z-index: 5;
-    }
+/* PHOTO GALLERY */
 
-    @keyframes floatUp {
-      from { transform: translateY(0) rotate(0deg); opacity: .8; }
-      to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  max-width: 500px;
+  margin: 30px auto;
+}
 
-    @media (min-width: 650px) {
-      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .photo-card:last-child { grid-column: 1 / -1; max-width: 70%; justify-self: center; }
-    }
+.photo-card {
+  background: #ffffffc9;
+  padding: 12px;
+  border: 1px solid #f5c6d8;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px #8c315116;
+  animation: fadeUp .9s ease both;
+  transition: transform .3s;
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; }
-    }
-  </style>
+.photo-card:hover {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.photo-card:nth-child(2) { animation-delay: .15s; }
+.photo-card:nth-child(3) { animation-delay: .3s; }
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff0f5;
+}
+
+.caption {
+  font-family: Georgia,serif;
+  font-style: italic;
+  font-size: 18px;
+  padding: 15px 5px 7px;
+}
+
+/* MUSIC PLAYER */
+
+.music-card {
+  max-width: 460px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  background: #ffffffd9;
+  border: 1px solid #f5cada;
+  border-radius: 25px;
+  animation: glow 4s ease-in-out infinite;
+}
+
+.vinyl {
+  width: 155px;
+  height: 155px;
+  margin: 5px auto 25px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    #30242c 0px,
+    #30242c 3px,
+    #59404c 4px,
+    #30242c 6px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px #0003;
+}
+
+.vinyl-center {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ed6598,#90234f);
+  border: 5px solid #fff0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 23px;
+}
+
+.vinyl.playing {
+  animation: spin 5s linear infinite;
+}
+
+.music-card audio {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.music-note {
+  color: #a14f70;
+  font-family: Georgia,serif;
+  font-style: italic;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+/* BIRTHDAY LETTER */
+
+.letter {
+  max-width: 620px;
+  margin: 25px auto;
+  padding: 28px 22px;
+  background: #ffffffb8;
+  border: 1px solid #f5cada;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px #90234f10;
+  text-align: left;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.letter p { margin: 0 0 18px; }
+.letter p:last-child { margin-bottom: 0; }
+
+.end {
+  padding: 40px 20px 65px;
+  font-family: Georgia,serif;
+  font-size: 24px;
+  color: #a72c60;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+  position: fixed;
+  bottom: -35px;
+  pointer-events: none;
+  animation: floatUp 7s linear forwards;
+  z-index: 100;
+}
+
+@media (min-width:650px) {
+  .gallery {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .photo-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 70%;
+    justify-self: center;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
 </head>
 
 <body>
-  <main>
-    <header class="hero">
-      <div class="eyebrow">A little corner of the internet,<br>made just for you</div>
 
-      <h1>
-        Happy<br>Birthday,
-        <span>Sadaf ♡</span>
-      </h1>
+<main>
 
-      <p class="intro">
-        For the girl who makes ordinary moments feel magical.
-        Today, this little world is all yours. 💗
+<header class="hero">
+
+  <div class="eyebrow">
+    A little corner of the internet,<br>
+    made just for you
+  </div>
+
+  <h1>
+    Happy<br>Birthday,
+    <span>Sadaf ♡</span>
+  </h1>
+
+  <p class="intro">
+    For the girl who makes ordinary moments feel magical.
+    Today, this little world is all yours. 💗
+  </p>
+
+  <button id="surpriseButton" type="button">
+    Open your surprise 💌
+  </button>
+
+  <div class="signature">
+    MADE WITH LOVE BY YOUR SWEETHEART ↓
+  </div>
+
+</header>
+
+<div id="surpriseContent" class="hidden">
+
+  <!-- PHOTO GALLERY -->
+
+  <section id="memories">
+
+    <h2>Our Little Memories 📸</h2>
+
+    <p class="subtitle">
+      Three moments, a thousand feelings, and so many memories
+      I want to keep close to my heart.
+    </p>
+
+    <div class="gallery">
+
+      <article class="photo-card">
+        <img
+          src="IMG_20260920_121517_976.jpg"
+          alt="A special memory"
+          loading="lazy">
+        <div class="caption">
+          A moment worth remembering ❤️
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img
+          src="IMG_20260920_125750_392.jpg"
+          alt="Another favourite memory"
+          loading="lazy">
+        <div class="caption">
+          One of my favourite memories 💗
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img
+          src="IMG_20261017_011128_298.jpg"
+          alt="A memory close to my heart"
+          loading="lazy">
+        <div class="caption">
+          A memory I'll always treasure 🌷
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FAVOURITE SONG -->
+
+  <section id="musicSection">
+
+    <h2>A Song That Reminds Me of You 🎶</h2>
+
+    <p class="subtitle">
+      Some feelings are difficult to express in words.
+      So I found a melody that reminds me of you. ❤️
+    </p>
+
+    <div class="music-card">
+
+      <div class="vinyl" id="vinylRecord">
+        <div class="vinyl-center">♡</div>
+      </div>
+
+      <h3 style="
+        font-family:Georgia,serif;
+        color:#90234f;
+        font-size:25px;
+        margin:10px 0;
+      ">
+        Ishq De Fanniyar
+      </h3>
+
+      <p style="color:#a14f70;">
+        Female Version 🎧
       </p>
 
-      <button id="surpriseButton" type="button">
-        Open your surprise 💌
-      </button>
+      <audio id="songAudio" controls preload="none">
+        <source src="sadaf-song.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
 
-      <div class="signature">MADE WITH LOVE BY YOUR SWEETHEART ↓</div>
-    </header>
+      <p class="music-note">
+        Every time I hear this song,
+        I'll think of you. 💗
+      </p>
 
-    <div id="surpriseContent" class="hidden">
-      <section id="memories">
-        <h2>Our Little Memories 📸</h2>
-        <p class="subtitle">
-          Three moments, a thousand feelings, and so many memories
-          I want to keep close to my heart.
-        </p>
-
-        <div class="gallery">
-          <article class="photo-card">
-            <img
-              src="IMG_20260920_121517_976.jpg"
-              alt="A special memory"
-              loading="lazy">
-            <div class="caption">A moment worth remembering ❤️</div>
-          </article>
-
-          <article class="photo-card">
-            <img
-              src="IMG_20260920_125750_392.jpg"
-              alt="Another favourite memory"
-              loading="lazy">
-            <div class="caption">One of my favourite memories 💗</div>
-          </article>
-
-          <article class="photo-card">
-            <img
-              src="IMG_20261017_011128_298.jpg"
-              alt="A memory close to my heart"
-              loading="lazy">
-            <div class="caption">A memory I'll always treasure 🌷</div>
-          </article>
-        </div>
-      </section>
-
-      <section id="letterSection">
-        <h2>A Letter for You 💌</h2>
-
-        <div class="letter">
-          <p><strong>My sweetest Sadaf, ❤️</strong></p>
-
-          <p>
-            If I could give you one thing in this world, it would be
-            the ability to see yourself through my eyes. Then you
-            would understand how special you are to me and why your
-            smile means so much.
-          </p>
-
-          <p>
-            You make ordinary moments feel beautiful, and even the
-            smallest things become precious when they involve you.
-            I may not always find the perfect words to express my
-            feelings, but I hope you never doubt how much you mean
-            to me.
-          </p>
-
-          <p>
-            On your birthday, I wish you happiness that never fades,
-            dreams that come true, and a thousand reasons to smile.
-            I hope I always get the chance to make you feel loved.
-          </p>
-
-          <p>
-            Happy birthday, my sweetheart. You will always have a
-            special place in my heart. 💗
-          </p>
-
-          <p>
-            <strong>Forever yours,<br>Your sweetheart ❤️</strong>
-          </p>
-        </div>
-      </section>
-
-      <div class="end">
-        Happy Birthday, Sadaf! 🎂<br>
-        <span style="font-size:18px">You are loved more than words can say ♡</span>
-        <br><br>
-        <button id="heartsButton" type="button">Send you some love 💕</button>
+      <div style="font-size:25px;">
+        ♡ ✨ ♡
       </div>
+
     </div>
-  </main>
 
-  <script>
-    const surpriseButton = document.getElementById("surpriseButton");
-    const surpriseContent = document.getElementById("surpriseContent");
-    const heartsButton = document.getElementById("heartsButton");
+  </section>
 
-    surpriseButton.addEventListener("click", function () {
-      surpriseContent.classList.remove("hidden");
-      surpriseButton.textContent = "Your surprise is open ❤️";
-      surpriseButton.disabled = true;
+  <!-- BIRTHDAY LETTER -->
 
-      surpriseContent.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+  <section id="letterSection">
 
-      createHearts(12);
-    });
+    <h2>A Letter for You 💌</h2>
 
-    function createHearts(amount) {
-      const symbols = ["♥", "♡", "💕", "💗"];
+    <div class="letter">
 
-      for (let i = 0; i < amount; i++) {
-        const heart = document.createElement("span");
-        heart.className = "heart";
-        heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        heart.style.left = Math.random() * 95 + "vw";
-        heart.style.fontSize = (18 + Math.random() * 20) + "px";
-        heart.style.animationDelay = (Math.random() * 2) + "s";
-        document.body.appendChild(heart);
+      <p><strong>My sweetest Sadaf, ❤️</strong></p>
 
-        setTimeout(() => heart.remove(), 9000);
-      }
-    }
+      <p>
+        If I could give you one thing in this world, it would be
+        the ability to see yourself through my eyes. Then you
+        would understand how special you are to me and why your
+        smile means so much.
+      </p>
 
-    heartsButton.addEventListener("click", function () {
-      createHearts(25);
-    });
-  </script>
+      <p>
+        You make ordinary moments feel beautiful, and even the
+        smallest things become precious when they involve you.
+        I may not always find the perfect words to express my
+        feelings, but I hope you never doubt how much you mean
+        to me.
+      </p>
+
+      <p>
+        On your birthday, I wish you happiness that never fades,
+        dreams that come true, and a thousand reasons to smile.
+        I hope I always get the chance to make you feel loved.
+      </p>
+
+      <p>
+        Happy birthday, my sweetheart. You will always have a
+        special place in my heart. 💗
+      </p>
+
+      <p>
+        <strong>
+          Forever yours,<br>
+          Your sweetheart ❤️
+        </strong>
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL MESSAGE -->
+
+  <div class="end">
+
+    Happy Birthday, Sadaf! 🎂<br>
+
+    <span style="font-size:18px">
+      You are loved more than words can say ♡
+    </span>
+
+    <br><br>
+
+    <button id="heartsButton" type="button">
+      Send you some love 💕
+    </button>
+
+  </div>
+
+</div>
+
+</main>
+
+<script>
+
+const surpriseButton =
+  document.getElementById("surpriseButton");
+
+const surpriseContent =
+  document.getElementById("surpriseContent");
+
+const heartsButton =
+  document.getElementById("heartsButton");
+
+const songAudio =
+  document.getElementById("songAudio");
+
+const vinylRecord =
+  document.getElementById("vinylRecord");
+
+/* OPEN BIRTHDAY SURPRISE */
+
+surpriseButton.addEventListener("click",function() {
+
+  surpriseContent.classList.remove("hidden");
+
+  surpriseButton.textContent =
+    "Your surprise is open ❤️";
+
+  surpriseButton.disabled = true;
+
+  surpriseContent.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+  createHearts(18);
+
+});
+
+/* FLOATING HEARTS */
+
+function createHearts(amount) {
+
+  const symbols = ["♥","♡","💕","💗","✨"];
+
+  for(let i=0;i<amount;i++) {
+
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+
+    heart.textContent =
+      symbols[Math.floor(Math.random()*symbols.length)];
+
+    heart.style.left =
+      Math.random()*95 + "vw";
+
+    heart.style.fontSize =
+      (18+Math.random()*20) + "px";
+
+    heart.style.animationDelay =
+      (Math.random()*2) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+      heart.remove();
+    },9000);
+
+  }
+
+}
+
+/* SEND MORE LOVE */
+
+heartsButton.addEventListener("click",function() {
+
+  createHearts(30);
+
+});
+
+/* ROTATING VINYL MUSIC ANIMATION */
+
+songAudio.addEventListener("play",function() {
+
+  vinylRecord.classList.add("playing");
+
+});
+
+songAudio.addEventListener("pause",function() {
+
+  vinylRecord.classList.remove("playing");
+
+});
+
+songAudio.addEventListener("ended",function() {
+
+  vinylRecord.classList.remove("playing");
+
+});
+
+</script>
+
 </body>
 </html>
